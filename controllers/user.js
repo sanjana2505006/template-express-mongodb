@@ -65,6 +65,14 @@ exports.create_post = (req, res) => {
     })
     .catch(err => {
       console.error({ err })
+
+      // Handle duplicate key errors (e.g. duplicate email)
+      // MongoDB duplicate error code is 11000
+      if (err && (err.code === 11000 || err.code === '11000' || err.codeName === 'DuplicateKey')) {
+        const key = (err.keyValue && Object.keys(err.keyValue)[0]) || 'email'
+        return res.status(400).send({ status: false, message: `${key} already in use` })
+      }
+
       return res.status(500).send({ err })
     })
 }
