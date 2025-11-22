@@ -18,20 +18,7 @@ A secure Express.js backend template with MongoDB integration, featuring passwor
 - **Email Support** - SendGrid integration ready
 - **Production Ready** - Error handling and security best practices
 
-## 🛠️ Tech Stack
-
-| Technology | Purpose |
-|-----------|---------|
-| **Express.js** | Web framework |
-| **MongoDB** | Database |
-| **Mongoose** | ODM |
-| **JWT** | Authentication |
-| **Bcrypt** | Password hashing |
-| **Joi** | Data validation |
-| **Multer** | File uploads |
-| **Socket.io** | Real-time communication (optional) |
-
-## ⚙️ Installation
+## Installation
 
 ### Prerequisites
 - Node.js (v14 or higher)
@@ -42,7 +29,7 @@ A secure Express.js backend template with MongoDB integration, featuring passwor
 
 ```bash
 # Clone the repository
-git clone https://github.com/sanjana2505006/template-express-mongodb.git
+git clone https://github.com/root-kings/template-express-mongodb.git
 
 # Navigate to directory
 cd template-express-mongodb
@@ -57,7 +44,7 @@ cp .env.example .env
 npm run dev
 ```
 
-## 🔧 Environment Variables
+## Environment Variables
 
 Create a `.env` file in the root directory:
 
@@ -79,7 +66,7 @@ UPLOADS_DIR=uploads
 PUBLIC_DIR=public
 ```
 
-## 🚀 Running the App
+## Running the App
 
 ```bash
 # Development mode (auto-reload with nodemon)
@@ -94,168 +81,59 @@ npm run lint
 
 Server runs on: `http://localhost:3000`
 
-## 📚 API Documentation
-Interactive API docs are available when running the server in development at:
+## API Documentation
+
+Interactive API documentation is available when running the server in development:
 
 ```
 http://localhost:3000/api-docs
 ```
 
-Below are the main endpoints:
-### Authentication Endpoints
+Please use the interactive docs for up-to-date endpoint details and examples.
 
-#### Login
-```http
-POST /api/auth/login
-Content-Type: application/json
+## Project Structure
 
-{
-  "email": "user@example.com",
-  "password": "MyPass@123",
-  "type": "root"
-}
-```
-
-**Response:**
-```json
-{
-  "status": true,
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
-  "user": {
-    "_id": "123456",
-    "name": "John Doe",
-    "email": "user@example.com",
-    "type": "root"
-  }
-}
-```
-
-#### Check Login Status
-```http
-GET /api/auth/login/status
-Authorization: Bearer <token>
-```
-
----
-
-### User Endpoints
-
-#### Create User
-```http
-POST /api/users
-Content-Type: application/json
-
-{
-  "name": "John Doe",
-  "email": "john@example.com",
-  "password": "MyPass@123",
-  "type": "root",
-  "phone": "1234567890"
-}
-```
-
-**Password Requirements:**
-- Minimum 8 characters
-- 1 uppercase letter
-- 1 lowercase letter
-- 1 number
-- 1 special character (!@#$%^&*)
-
-#### Get All Users
-```http
-GET /api/users?type=root
-Authorization: Bearer <token>
-```
-
-#### Get User Details
-```http
-GET /api/users/:userid
-Authorization: Bearer <token>
-```
-
-#### Delete User
-```http
-DELETE /api/users/:userid
-Authorization: Bearer <token>
-```
-
----
-
-### Utility Endpoints
-
-#### Check Email Availability
-```http
-GET /api/utils/checkEmailAvailability?email=user@example.com
-```
-
-#### Check Username Availability
-```http
-GET /api/utils/checkUsernameAvailability?username=johndoe
-```
-
----
-
-## 📁 Project Structure
+Top-level folders:
 
 ```
-.
-├── controllers/          # Business logic for routes
-│   ├── auth.js          # Authentication logic
-│   ├── user.js          # User management logic
-│   └── util.js          # Utility functions
-├── models/              # Mongoose schemas
-│   └── user.js          # User schema
-├── routes/              # API route definitions
-│   ├── index.js         # Main router
-│   ├── auth.js          # Auth routes
-│   ├── user.js          # User routes
-│   └── util.js          # Utility routes
-├── middlewares/         # Custom middleware
-│   ├── validateToken.js # JWT validation
-│   └── allowRoot.js     # Role-based access
-├── utils/              # Utility functions
-│   ├── validators.js   # Joi validation schemas
-│   ├── generate.js     # Key/secret generation
-│   ├── asyncForEach.js # Async helpers
-│   ├── mkdirSync.js    # Directory creation
-│   └── unlinkSync.js   # File deletion
-├── data/               # Test data
-│   └── test.http       # HTTP client requests
-├── server.js           # Main server file
-├── package.json        # Dependencies
-└── README.md           # This file
+controllers/
+models/
+routes/
+middlewares/
+utils/
+data/
 ```
 
-## 🔒 Security Features
+## Security Features
 
-✅ **Password Security**
+**Password Security**
 - Bcrypt hashing with 10 salt rounds
 - Passwords never returned in API responses
 - Passwords never included in JWT tokens
 
-✅ **Input Validation**
+**Input Validation**
 - Email format validation
 - Password strength requirements
 - User data validation
 - Request sanitization
 
-✅ **Authentication**
+**Authentication**
 - JWT-based token authentication
 - Token expiration (configurable)
 - Secure token verification
 
-✅ **Authorization**
+**Authorization**
 - Role-based access control (RBAC)
 - Token validation middleware
 - Protected routes
 
-✅ **Other**
+**Other**
 - CORS protection
 - HTTP request logging
 - Error handling
 - Database connection pooling
 
-## 🧪 Testing
+## Testing
 
 ### Using REST Client (VS Code)
 
@@ -306,7 +184,7 @@ curl -X POST http://localhost:3000/api/auth/login \
 | `npm run dev` | Start with auto-reload (nodemon) |
 | `npm run lint` | Run ESLint |
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feat/amazing-feature`)
@@ -320,7 +198,7 @@ curl -X POST http://localhost:3000/api/auth/login \
 - Update documentation if needed
 - Follow the existing code style
 
-## 🐛 Issues & Bugs
+## Issues & Bugs
 
 Found a bug? [Open an issue](https://github.com/root-kings/template-express-mongodb/issues) with:
 - Clear description of the problem
@@ -328,22 +206,22 @@ Found a bug? [Open an issue](https://github.com/root-kings/template-express-mong
 - Expected vs actual behavior
 - Your environment (Node version, OS, etc.)
 
-## 📄 License
+## License
 
 MIT License - see LICENSE file for details
 
-## 👨‍💻 Author
+## Author
 
 **Root Kings**
 - GitHub: [@root-kings](https://github.com/root-kings)
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Express.js team for the amazing framework
 - MongoDB for the database
 - All contributors and users
 
-## 📞 Support
+## Support
 
 For issues, questions, or suggestions:
 - Open an issue on GitHub
