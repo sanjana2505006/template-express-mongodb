@@ -1,4 +1,4 @@
-# Root Template Express
+# root-template-express
 
 A secure Express.js backend template with MongoDB integration, featuring password hashing, input validation, and JWT authentication.
 
@@ -7,26 +7,16 @@ A secure Express.js backend template with MongoDB integration, featuring passwor
 ![MongoDB](https://img.shields.io/badge/MongoDB-5.9-green)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
-## 🎯 Features
+## Features
 
-- 🔐 **Password Security** - Bcrypt hashing (10 salt rounds)
-- ✅ **Input Validation** - Joi validation for emails, passwords, and user data
-- 🔑 **JWT Authentication** - Secure token-based auth
-- 📦 **MongoDB Integration** - Mongoose ORM with pagination
-- 🛡️ **CORS Protection** - Cross-origin request handling
-- 📝 **Request Logging** - Morgan HTTP request logger
-- 📧 **Email Support** - SendGrid integration ready
-- 🚀 **Production Ready** - Error handling and security best practices
-
-## 📸 Demo
-
-Here's how the API works:
-
-```
-POST /api/users - Create User
-POST /api/auth/login - Login
-GET /api/users - List Users (requires token)
-```
+- **Password Security** - Bcrypt hashing (10 salt rounds)
+- **Input Validation** - Joi validation for emails, passwords, and user data
+- **JWT Authentication** - Secure token-based auth
+- **MongoDB Integration** - Mongoose ORM with pagination
+- **CORS Protection** - Cross-origin request handling
+- **Request Logging** - Morgan HTTP request logger
+- **Email Support** - SendGrid integration ready
+- **Production Ready** - Error handling and security best practices
 
 ## 🛠️ Tech Stack
 
@@ -105,7 +95,13 @@ npm run lint
 Server runs on: `http://localhost:3000`
 
 ## 📚 API Documentation
+Interactive API docs are available when running the server in development at:
 
+```
+http://localhost:3000/api-docs
+```
+
+Below are the main endpoints:
 ### Authentication Endpoints
 
 #### Login

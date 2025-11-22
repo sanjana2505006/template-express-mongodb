@@ -11,6 +11,34 @@ router.get('/:userid', validateToken, userController.details_get)
 
 router.get('/', validateToken, userController.list_get)
 
+/**
+ * @openapi
+ * /api/users:
+ *   post:
+ *     summary: Create a new user
+ *     tags:
+ *       - Users
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               name:
+ *                 type: string
+ *               email:
+ *                 type: string
+ *               password:
+ *                 type: string
+ *               type:
+ *                 type: string
+ *     responses:
+ *       '200':
+ *         description: User created
+ *       '400':
+ *         description: Validation error or duplicate email
+ */
 router.post('/', validate(createUserSchema), userController.create_post)
 
 router.delete('/:userid', validateToken, userController.delete_delete)
