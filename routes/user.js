@@ -14,9 +14,5 @@ router.post('/', validateToken, userController.create_post)
 
 router.delete('/:userid', validateToken, userController.delete_delete)
 
-router.get('/', (req, res) => {
-  res.send('Please read documentation for the API. (user)')
-})
-
 // Export -----
 module.exports = router
