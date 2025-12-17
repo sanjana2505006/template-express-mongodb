@@ -12,3 +12,4 @@ Backend template for Root Kings Express Applications
 6. `JWT_SECRET`
 7. `UPLOADS_DIR`
 8. `PUBLIC_DIR`
+9. `RESEND_API_KEY` - API key for Resend email service
